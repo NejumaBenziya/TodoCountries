@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React,{useEffect, useState} from "react";
 import './App.css';
+import Countries from './components/countries/Countries';
+import Todo from './components/Todo';
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+
+import NotFound from "./components/notfound/NotFound";
+import Home from "./components/home/Home";
 
 function App() {
+  const [show,setShow]=useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<Home/>}></Route>
+    <Route path='/Todo' element={<Todo/>}></Route>
+    <Route path='/Countries' element={<Countries/>}></Route>
+    <Route path='*' element={<NotFound/>}></Route>
+   </Routes>
+   </BrowserRouter>
+     
   );
 }
 

@@ -1,0 +1,9 @@
+.list-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done-label{
+    background-color: green;
+    
+}
